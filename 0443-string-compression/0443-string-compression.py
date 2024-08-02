@@ -34,5 +34,4 @@ class Solution:
 
         chars.clear()
         chars.extend(s)
-        print(s)
         return len(chars)
