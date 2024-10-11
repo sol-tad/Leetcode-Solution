@@ -1,21 +1,17 @@
 class Solution:
     def checkString(self, s: str) -> bool:
-        flag = True
-        turn = 0
-        i = 0
-        
-        if s.count('a') == len(s):
+        sl=list(s)
+        turn=-1
+        if s.count('a')==0 or s.count('b')==0:
             return True
         else:
-            while i < len(s) - 1 and s[i] == 'a':
-                turn = i
-                i += 1
-
-            i = turn + 1
-            while i < len(s):
-                if s[i] == 'a':
-                    flag = False
+            for i in range(len(s)):
+                if s[i]=='b':
+                    turn=i
                     break
-                i += 1
-        
-        return flag
+            if s[turn:len(s)].count('a')>0:
+                return False
+        return True
+
+
+       
