@@ -1,5 +1,6 @@
 class Solution:
     def countGoodSubstrings(self, s: str) -> int:
+
         start=middle=end=good=0
         while start<len(s)-2:
             middle=start+1
