@@ -1,10 +1,10 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
-        numset=set(nums)
-        numarr=[]
+        hm=dict(Counter(nums))
+        res=[]
+        for k in hm:
+            if hm[k]>len(nums)//3:
+                res.append(k)
+        return res
 
-        for num in numset:
-            if nums.count(num)>len(nums)/3:
-                 numarr.append(num)
-        return numarr
         
