@@ -14,5 +14,7 @@ class Solution:
                 if hm[k]>2 and  hm[k]%2!=0:
                     pair+= hm[k]//2
                     rem+= hm[k]%2
+                else:
+                     rem+=1
         return [pair,rem]
         
