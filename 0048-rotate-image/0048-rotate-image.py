@@ -6,8 +6,9 @@ class Solution:
         n=len(matrix)
         # transpose
         for i in range(n):
-            for j in range(i+1, n):
+            for j in range(i, n):
                 matrix[i][j], matrix[j][i]  = matrix[j][i], matrix[i][j]
+        print(matrix)
         
         # refection on middle row
         for r in range(n):
