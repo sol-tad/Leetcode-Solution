@@ -6,7 +6,11 @@ class Solution:
             res.extend([n]*hm[n])
             del hm[n]
         hm = dict(sorted(hm.items()))
-        print(hm)
+        
+        '''
+          remaining = sorted(hm.elements())  
+          res.extend(remaining)
+        '''
         for k in hm:
             res.extend([k]*hm[k])
         return res
