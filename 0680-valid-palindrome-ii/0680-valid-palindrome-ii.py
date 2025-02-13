@@ -1,15 +1,19 @@
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        l=0
-        r=len(s)-1
-        flag=0
-        while l<=r:
-            if s[l]!=s[r]:
-                if len(s)==3:
-                    flag+=1
-                flag+=1
-            r-=1
-            l+=1
-        return True if flag<=1 else False
-
+        def isPalindrome(left: int, right: int) -> bool:
+            while left<right:
+                if s[left]!=s[right]:
+                    return False
+                left+=1
+                right-=1
+            return True
         
+        left,right=0,len(s)-1
+        
+        while left<right:
+            if s[left] != s[right]:
+                return isPalindrome(left+1, right) or isPalindrome(left,right-1)
+            left+= 1
+            right-= 1
+        
+        return True
