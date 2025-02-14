@@ -1,24 +1,27 @@
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
-        l,r=0,len(nums)-1
-        res=float("inf")
         nums.sort()
-
-        while (l+1)<r:
-            currsum=0
-            for m in range(l+1,r):
+        l=0
+        r=len(nums)-1
+        res=float("inf")
+        while l<(len(nums)-2):
+            m=l+1
+            r=len(nums)-1 
+            while m<r:
                 currsum=nums[l]+nums[m]+nums[r]
-                if abs(currsum-target)<abs(res-target):
-                    res=currsum
-            if abs(nums[l]-target)> abs(nums[r]-target):
-                l+=1
-            elif abs(nums[l]-target)< abs(nums[r]-target):
-                r-=1
-            else:
-                l+=1
-                r-=1
+                if abs(target-currsum)<abs(target-res):
+                    res=currsum 
+                if (currsum)<target:
+                    m+=1
+                else:
+                    r-=1
+            l+=1
 
         return res
+
+
+        
+        
 
 
 
