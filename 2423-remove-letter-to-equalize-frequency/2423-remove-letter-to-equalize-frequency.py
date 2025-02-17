@@ -4,7 +4,7 @@ class Solution:
         fequCount = Counter(hm.values())
 
         if len(fequCount) == 1:
-            if 1 in fequCount:
+            if 1 in fequCount.values() or 1 in fequCount:
                 return True
             else:
                 return False
