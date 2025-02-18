@@ -4,7 +4,8 @@ class Solution:
         currSum=0
 
         for n in nums:
-            currSum=max(0,currSum)
+            if currSum<0:
+                currSum=0
             currSum+=n
             maxSum=max(maxSum,currSum)
         return maxSum
