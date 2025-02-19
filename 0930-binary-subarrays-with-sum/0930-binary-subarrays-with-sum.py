@@ -1,6 +1,6 @@
 class Solution:
     
-    def slAtmost(self,nums,k):
+    def slwAtmost(self,nums,k):
         l=0
         currsum=0
         count=0
@@ -12,8 +12,8 @@ class Solution:
             count+=r-l+1
         return count
     def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
-        counGoal=self.slAtmost(nums,goal)
-        counGoal_1=self.slAtmost(nums,goal-1)
+        counGoal=self.slwAtmost(nums,goal)
+        counGoal_1=self.slwAtmost(nums,goal-1)
         return counGoal-counGoal_1
     
     
