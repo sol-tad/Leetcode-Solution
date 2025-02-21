@@ -3,6 +3,8 @@ class Solution:
         mxcandy=max(candies)
         res=[]
         for i in range(len(candies)):
+
+            
             res.append((candies[i]+extraCandies)>=mxcandy)
         return res
         
