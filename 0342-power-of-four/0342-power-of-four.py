@@ -1,11 +1,11 @@
+def powOfFour(num,n)->bool:
+    
+    if num==1:
+        return True
+    elif num<1:
+        return False
+    return powOfFour(num/4,n)
 class Solution:
     def isPowerOfFour(self, n: int) -> bool:
-         if n <= 0:
-            return False
-         while n > 1:
-            if n % 4 != 0:
-                return False
-            n //= 4  
-        
-         return True
-        
+        ans=powOfFour(n,n)
+        return ans
