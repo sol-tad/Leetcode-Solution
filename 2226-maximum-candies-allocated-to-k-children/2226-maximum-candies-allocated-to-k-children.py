@@ -3,8 +3,8 @@ class Solution:
         def helper(candy):
             count=0
             for c in candies:
-                if c//candy>0:
-                    count+=1
+                count+=c//candy
+                
             return count>=k
         low,high=1,max(candies)
         res=0
