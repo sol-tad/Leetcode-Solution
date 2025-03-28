@@ -8,6 +8,7 @@ class Solution:
             else:
                 hm[n]=1
         
+        
         shm= {key:val for key,val in sorted(hm.items(),key=lambda item:item[1])}
         res=list(shm.keys())
         print(res)
