@@ -4,6 +4,7 @@ class Solution:
         nums.sort()
         l=0
         r=len(nums)
+        
         while l<r:
             mid=(l+r)//2
             if nums[mid]>mid:
