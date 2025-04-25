@@ -25,7 +25,7 @@ class Solution:
             return True
         for i in range(numCourses):
             if color[i] == white:
-                if not dfs(0):
+                if not dfs(i):
                     return False 
           
         return True
