@@ -13,8 +13,8 @@ class Solution:
         def dfs(node):
             if color[node]==gray:
                 return False
-            if color[node]==black:
-                return True
+            # if color[node]==black:
+            #     return True
             color[node] = gray                          
             for ng in graph[node]:
                 if color[ng] == 2:
