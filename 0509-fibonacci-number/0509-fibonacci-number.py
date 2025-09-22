@@ -1,8 +1,13 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if n==1:
-            return 1
-        if n==0:
-            return 0
-        return self.fib(n-1)+self.fib(n-2)
-        
+        mp = defaultdict(int)
+       
+        def solu(n):
+            if n == 1:
+                return 1
+            if n == 0:
+                return 0
+            if n not in mp:
+                mp[n] = solu( n - 1) + solu(n - 2)
+            return mp[n]
+        return solu(n)
