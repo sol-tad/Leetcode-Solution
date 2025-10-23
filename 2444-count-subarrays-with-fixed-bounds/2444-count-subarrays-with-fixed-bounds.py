@@ -1,13 +1,19 @@
 class Solution:
     def countSubarrays(self, nums: list[int], minK: int, maxK: int) -> int:
-        currmin=float('inf')
-        currmax=float('inf')
-        count=0
-
-        for start in range(len(nums)):
-            for end in range(start,len(nums)):
-                currmin=min(nums[start:end+1])
-                currmax=max(nums[start:end+1])
-                if currmin==minK and currmax==maxK:
-                    count+=1
+        count = 0
+        left_bound = -1
+        last_minK = -1
+        last_maxK = -1
+        
+        for i in range(len(nums)):
+            if nums[i] < minK or nums[i] > maxK:
+                left_bound = i  
+            if nums[i] == minK:
+                last_minK = i  
+            if nums[i] == maxK:
+                last_maxK = i 
+                
+            if last_minK != -1 and last_maxK != -1:
+                count += max(0, min(last_minK, last_maxK) - left_bound)
+        
         return count
